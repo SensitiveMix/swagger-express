@@ -33,7 +33,7 @@ fs.readdir(`./${docPath}`, (err, files) => {
     swaggerUi.setup(undefined, {
       swaggerUrls: files.map(file => {
         return {
-          url: `http://localhost:${config.get('PORT')}/${file}`,
+          url: `http://${config.get('API_ADDRESS')}:${config.get('PORT')}/${file}`,
           name: file.split('-')[1]
         }
       })
